@@ -89,7 +89,7 @@ class transaction2 extends transaction;
             count++; 
         end	
         if (count==4) begin 
-            PREADY=1;i//reacrtive 
+            PREADY=1;//reacrtive 
             transfer=1; //always 1..so idle-setup-access-setup-access...with wait states
             count=0; 
         end else PREADY=0;
