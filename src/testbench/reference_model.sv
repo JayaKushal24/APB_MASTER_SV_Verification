@@ -36,10 +36,10 @@ class reference_model;
                                 prev_pwrite=0;
                                 prev_strb=0;
                                 prev_pwdata=0;
-				prev_rdata_out=0;
-				flag_error=0;
-				flag_transfer_done=0;
-			end
+                                prev_rdata_out=0;
+                                flag_error=0;
+                                flag_transfer_done=0;
+                        end
                         else if(t1.reset==1) begin
                                 if(c_state==idle) begin
                                         t1.PSEL=0;
@@ -54,7 +54,7 @@ class reference_model;
                                         if(flag_transfer_done)begin//to delay by 1 cycle
                                                 t1.transfer_done=1;
                                                 flag_transfer_done=0;
-										end
+                                        end
                                         else    t1.transfer_done=0;
                                         if(flag_error)begin
                                                 t1.error=1;
@@ -76,7 +76,7 @@ class reference_model;
                                         if(flag_transfer_done)begin//to delay by 1 cycle
                                                 t1.transfer_done=1;
                                                 flag_transfer_done=0;
-										end
+                                                                                end
                                         else    t1.transfer_done=0;
                                         if(flag_error)begin
                                                 t1.error=1;
@@ -108,9 +108,9 @@ class reference_model;
                                                 prev_strb=0;
                                         end
                                         if (t1.PREADY==1) begin
-                                                //t1.transfer_done=1;
+                                                t1.transfer_done=0;
                                                 flag_transfer_done=1;
-                                                //t1.error=t1.PSLVERR;
+                                                t1.error=0;
                                                 flag_error=t1.PSLVERR;
                                                 if(t1.PWRITE==0) begin
                                                         t1.rdata_out=t1.PRDATA;

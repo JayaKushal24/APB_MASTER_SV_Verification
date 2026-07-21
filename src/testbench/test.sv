@@ -15,7 +15,7 @@ endclass
 
 class test1 extends test;
 	transaction1 trans1;
-  	function new(virtual apb_if drv_vif,virtual apb_if mon_vif);//need to change here
+  	function new(virtual apb_if drv_vif,virtual apb_if mon_vif);
     	super.new(drv_vif,mon_vif);
   	endfunction
   	task run();
@@ -89,10 +89,11 @@ class test_regression extends test;
 	env.gen.t1=trans2;
     	env.run();
    	
+	#20;   	 	
 	trans3 =new();
     	env.gen.t1=trans3;
     	env.run();
-   	 	
+	
 	trans4 =new();
     	env.gen.t1=trans4;
     	env.run();
