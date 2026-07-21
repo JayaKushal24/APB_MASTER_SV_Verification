@@ -36,8 +36,10 @@ class reference_model;
                                 prev_pwrite=0;
                                 prev_strb=0;
                                 prev_pwdata=0;
-								prev_rdata_out=0;
-                        end
+				prev_rdata_out=0;
+                       		flag_error=0; 
+				flag_transfer_done=0;
+			end
                         else if(t1.reset==1) begin
                                 if(c_state==idle) begin
                                         t1.PSEL=0;
